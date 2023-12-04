@@ -16,9 +16,8 @@ This Python script allows you to create a video from a sequence of JPG images. Y
    ```bash
    pip install opencv-python tqdm
 
+   python3 timelapse.py
 
-    ```bash
-    python3 timelapse.py
 
 2. Follow the on-screen instructions to select the video resolution
 
@@ -26,6 +25,7 @@ This Python script allows you to create a video from a sequence of JPG images. Y
 ## Credits
 
 @hernanstocke - For initiating and contributing to this project.
+
 ChatGPT - Provided guidance and code assistance through the AI model.
 
 
