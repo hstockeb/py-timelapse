@@ -1,8 +1,3 @@
-# REMEMBER TO INSTALL THE FOLLOWING
-# pip install opencv-python
-# pip install tqdm
-
-
 import cv2
 import os
 from tqdm import tqdm
@@ -18,7 +13,7 @@ images = [img for img in os.listdir(image_folder) if img.endswith(".jpg")]
 images.sort()  # Sort images in alphanumeric order
 
 # Prompt for video resolution
-resolution = input("Select video resolution:\n1) 720p\n2) 1080p\n3) 4K\nEnter the number: ")
+resolution = input("Select video resolution:\n1) 720p\n2) 1080p\n3) 4K\n4) 8K\nEnter the number: ")
 
 # Define the width and codec based on selected resolution
 if resolution == '1':
@@ -30,26 +25,29 @@ elif resolution == '2':
 elif resolution == '3':
     width = 3840
     resolution_name = '4K'
+elif resolution == '4':
+    width = 7680
+    resolution_name = '8K'
 else:
     print("Invalid resolution selection. Using default 1080p.")
     width = 1920
     resolution_name = '1080p'
 
 # Prompt for video codec
-codec_choice = input("Select video codec:\n1) mp4v\n2) h264\nEnter the number: ")
+codec_choice = input("Select video codec:\n1) mp4v\n2) avc1\nEnter the number: ")
 
 # Define the codec based on user choice
 if codec_choice == '1':
     codec = 'mp4v'
 elif codec_choice == '2':
-    codec = 'h264'
+    codec = 'avc1'
 else:
     print("Invalid codec selection. Using default mp4v.")
     codec = 'mp4v'
 
 # Prompt for video quality
-quality = int(input("Enter video quality (0-100): "))
-if quality < 0 or quality > 100:
+quality = int(input("Enter video quality (0-90): "))
+if quality < 0 or quality > 90:
     print("Invalid quality value. Using default value of 70.")
     quality = 70
 
